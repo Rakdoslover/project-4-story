@@ -19,7 +19,7 @@ class ChapterDetail(View):
         
         return render(
             request,
-            "post_detail.html",
+            "chapter_detail.html",
             {
                 "chapter": chapter,
                 "comments": comments,

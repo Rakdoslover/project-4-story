@@ -23,7 +23,7 @@
                                     <p class="author">Author: {{ chapter.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'chapter_detail' chapter.slug %}" class="post-link">
                                 <h2 class="card-title">{{ chapter.title }}</h2>
                                 <p class="card-text">{{ chapter.excerpt }}</p>
                             </a>
