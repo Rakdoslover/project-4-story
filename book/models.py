@@ -31,6 +31,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Chapter, on_delete=models.CASCADE,
                              related_name="comments")
     proposed_title = models.CharField(max_length=80)
+    name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
