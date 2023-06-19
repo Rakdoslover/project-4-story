@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'the-lonely-beach-project.herokuapp.com',
+    'the-lonely-beach-project-aff864383002.herokuapp.com/',
     '8000-rakdoslover-project-4-st-o5dxsndkdk.us2.codeanyapp.com'
 ]
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'book',
 ]
 
