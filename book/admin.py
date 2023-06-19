@@ -18,4 +18,3 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('proposed_title', 'body', 'post', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('proposed_title', 'email', 'body')
-

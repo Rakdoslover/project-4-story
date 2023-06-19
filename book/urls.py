@@ -3,6 +3,5 @@ from django.urls import path
 
 urlpatterns = [
     path("", views.ChapterList.as_view(), name="home"),
-    path('<slug:slug>/', views.ChapterDetail.as_view(), name='chapter_detail'),
-    
+    path('<slug:slug>/', views.ChapterDetail.as_view(), name='chapter_detail'),    
 ]

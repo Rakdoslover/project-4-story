@@ -15,8 +15,10 @@ class ChapterDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
         chapter = get_object_or_404(queryset, slug=slug)
-        comments = chapter.comments.filter(approved=True).order_by("-created_on")
-        
+        comments = chapter.comments.filter(approved=True).order_by(
+            "-created_on"
+        )
+
         return render(
             request,
             "chapter_detail.html",
