@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Chapter
+from .forms import CommentForm
 
 
 class ChapterList(generic.ListView):
@@ -25,5 +26,35 @@ class ChapterDetail(View):
             {
                 "chapter": chapter,
                 "comments": comments,
+                "commented": False,
+                "comment_form": CommentForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Chapter.objects.filter(status=1)
+        chapter = get_object_or_404(queryset, slug=slug)
+        comments = chapter.comments.filter(approved=True).order_by(
+            "-created_on"
+        )
+
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post.comments.all()
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "chapter_detail.html",
+            {
+                "chapter": chapter,
+                "comments": comments,
+                "commented": True,
+                "comment_form": CommentForm()
             },
         )

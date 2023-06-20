@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'the-lonely-beach-project-aff864383002.herokuapp.com',
-    '8000-rakdoslover-project-4-st-o5dxsndkdk.us2.codeanyapp.com'
+    '8000-rakdoslover-project-4-st-w2sj69qxa7.us2.codeanyapp.com',
 ]
 
 
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'book',
 ]
 
@@ -58,6 +59,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
