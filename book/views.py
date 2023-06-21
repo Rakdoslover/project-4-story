@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Chapter
 from .forms import CommentForm
@@ -20,16 +20,18 @@ class ChapterDetail(View):
             "-created_on"
         )
 
-        return render(
-            request,
-            "chapter_detail.html",
-            {
-                "chapter": chapter,
-                "comments": comments,
-                "commented": False,
-                "comment_form": CommentForm()
-            },
-        )
+        if request.method == 'GET':
+
+            return render(
+                request,
+                "chapter_detail.html",
+                {
+                    "chapter": chapter,
+                    "comments": comments,
+                    "commented": False,
+                    "comment_form": CommentForm()
+                },
+            )
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
@@ -43,8 +45,9 @@ class ChapterDetail(View):
         if comment_form.is_valid():
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post.comments.all()
+            comment = chapter.comments.all()
             comment.save()
+            return redirect(request, 'chapter_detail.html')
         else:
             comment_form = CommentForm()
 

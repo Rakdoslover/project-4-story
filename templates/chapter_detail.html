@@ -54,26 +54,19 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    <!-- The body of the comment goes before the | -->
-                    <form action="GET" style="margin-top: 1.3em;">
-                    {% csrf_token %}
-                    <p>{{ comment.proposed_title | linebreaks }}
-                    </p>
-                    <img src="{{ comment.featured_image }}" alt="Uploaded image by user">
-                    
-                </div>
-                <!-- Our for loop ends here -->
-                {% endfor %}
+                {% if not chapter.comment.all %}
+                    Nothing here yet... 
+                {% else %}
+                    {%for comment in chapter.comments.all %}
+                        <strong>
+                            {{ comment.name }}
+                            {{ comment.proposed_title }}
+                        </strong>
+                        <br>
+                        {{ comment.featured_image }}
+                        <br>
+                        {% endfor %}
+                {% endif %}
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
