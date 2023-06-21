@@ -14,9 +14,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="/media/pictures/starry sky.jpg" width="100%">
+                <img src="/media/pictures/starry-sky.jpg" width="100%">
                 {% else %}
-                <img src="/media/pictures/starry sky.jpg" width="100%">
+                <img src="/media/pictures/starry-sky.jpg" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -65,7 +65,12 @@
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
-                    {{ comment.body | linebreaks }}
+                    <form action="GET" style="margin-top: 1.3em;">
+                    {% csrf_token %}
+                    <p>{{ comment.proposed_title | linebreaks }}
+                    </p>
+                    <img src="{{ comment.featured_image }}" alt="Uploaded image by user">
+                    
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
@@ -83,7 +88,7 @@
                 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
+                <form method="POST" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
