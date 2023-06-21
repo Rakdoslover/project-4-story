@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .models import Chapter
+from .models import Chapter, Comment
 from .forms import CommentForm
-
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin
+)
 
 class ChapterList(generic.ListView):
     model = Chapter
@@ -61,3 +63,9 @@ class ChapterDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+
+class DeleteComment(View):
+    """Delete a comment"""
+    model = Comment
+    success_url = '/chapter_detail/'
