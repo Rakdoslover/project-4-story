@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 {% load crispy_forms_tags %}
+
+{% load static %}
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -14,9 +16,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="/media/pictures/starry-sky.jpg" width="100%">
+                <img src="{% static '/media/pictures/starry-sky.jpg' %}" width="100%">
                 {% else %}
-                <img src="/media/pictures/starry-sky.jpg" width="100%">
+                <img src="{{ chapter.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -58,7 +60,7 @@
                     {{ comment.name }}
                     <br>
                     <br>
-                    {{ comment.proposed_title }}
+                    Proposed chapter title: {{ comment.proposed_title }}
                 </strong>
                 <br>
                 <img src="{{ comment.featured_image.url }}" alt="Uploaded image">
@@ -79,9 +81,11 @@
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="POST" style="margin-top: 1.3em;">
+                <form method="POST" style="margin-top: 1.3em;" enctype="multipart/form-data">
                     {{ comment_form | crispy }}
+
                     {% csrf_token %}
+                    <br>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}

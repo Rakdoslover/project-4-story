@@ -43,13 +43,14 @@ class ChapterDetail(View):
             "-created_on"
         )
 
-        comment_form = CommentForm(data=request.POST)
+        comment_form = CommentForm(request.POST, request.FILES)
 
         if comment_form.is_valid():
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             # comment = chapter.comments.all()
             comment.post = chapter
+
             comment.save()
 
         else:
