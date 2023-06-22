@@ -48,8 +48,8 @@ class ChapterDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment = chapter.comments.all()
-            comment.save()
-            return redirect(request, 'chapter_detail.html')
+            comment.update()
+            return redirect(request, 'chapter_detail')
         else:
             comment_form = CommentForm()
 
