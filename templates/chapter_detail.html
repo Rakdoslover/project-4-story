@@ -37,7 +37,7 @@
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             <!-- Our total_comments variable goes before the closing strong tag -->
-                        {{ total_comments }}</strong>
+                            {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
                 </div>
@@ -53,20 +53,18 @@
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the tags to iterate through each comment in comments -->
-                {% if not chapter.comment.all %}
-                    Nothing here yet... 
-                {% else %}
-                    {%for comment in chapter.comments.all %}
-                        <strong>
-                            {{ comment.name }}
-                            {{ comment.proposed_title }}
-                        </strong>
-                        <br>
-                        {{ comment.featured_image.url }}
-                        <br>
-                        {% endfor %}
-                {% endif %}
+                {%for comment in comments %}
+                <strong>
+                    {{ comment.name }}
+                    <br>
+                    <br>
+                    {{ comment.proposed_title }}
+                </strong>
+                <br>
+                <img src="{{ comment.featured_image.url }}" alt="Uploaded image">
+                <br>
+                <hr>
+                {% endfor %}
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
@@ -78,7 +76,7 @@
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-                
+
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="POST" style="margin-top: 1.3em;">

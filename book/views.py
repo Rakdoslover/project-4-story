@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
 
+
 class ChapterList(generic.ListView):
     model = Chapter
     queryset = Chapter.objects.filter(status=1).order_by("-created_on")
@@ -47,9 +48,10 @@ class ChapterDetail(View):
         if comment_form.is_valid():
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment = chapter.comments.all()
-            comment.update()
-            return redirect(request, 'chapter_detail')
+            # comment = chapter.comments.all()
+            comment.post = chapter
+            comment.save()
+
         else:
             comment_form = CommentForm()
 
