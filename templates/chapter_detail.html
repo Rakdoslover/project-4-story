@@ -36,10 +36,10 @@
                 </p>
                 <div class="row">
                     <div class="col-1">
-                        {% with comments.count as total_comments %}
+                        {% with reviews.count as total_reviews %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
+                            <!-- Our total_reviews variable goes before the closing strong tag -->
+                            {{ total_reviews }}</strong>
                         {% endwith %}
                     </div>
                 </div>
@@ -53,17 +53,17 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+            <h3>Reviews:</h3>
             <div class="card-body">
-                {%for comment in comments %}
+                {%for review in reviews %}
                 <strong>
-                    {{ comment.name }}
+                    {{ review.name }}
                     <br>
                     <br>
-                    Proposed chapter title: {{ comment.proposed_title }}
+                    Proposed chapter title: {{ review.proposed_title }}
                 </strong>
                 <br>
-                <img src="{{ comment.featured_image.url }}" alt="Uploaded image" style="max-width: 400px; max-height: 300px;">
+                <img src="{{ review.featured_image.url }}" alt="Uploaded image" style="max-width: 400px; max-height: 300px;">
                 <br>
                 <hr>
                 {% endfor %}
@@ -72,17 +72,17 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
-                {% if commented %}
+                {% if reviewed %}
                 <div class="alert alert-success" role="alert">
                     Thanks for your input!
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
 
-                <h3>Leave a comment:</h3>
+                <h3>Leave a review:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="POST" style="margin-top: 1.3em;" enctype="multipart/form-data">
-                    {{ comment_form | crispy }}
+                    {{ review_form | crispy }}
 
                     {% csrf_token %}
                     <br>

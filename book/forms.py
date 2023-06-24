@@ -1,8 +1,8 @@
-from .models import Comment
+from .models import Review
 from django import forms
 
 
-class CommentForm(forms.ModelForm):
+class ReviewForm(forms.ModelForm):
     class Meta:
-        model = Comment
+        model = Review
         fields = ('proposed_title', 'featured_image')
