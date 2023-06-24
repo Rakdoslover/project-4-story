@@ -27,10 +27,11 @@ class Chapter(models.Model):
         return self.title
 
 
-class Review(models.Model):
+# Main review model for the users
+class Comment(models.Model):
 
     post = models.ForeignKey(Chapter, on_delete=models.CASCADE,
-                             related_name="reviews")
+                             related_name="comments")
     name = models.CharField(max_length=80)
     proposed_title = models.CharField(max_length=80)
     email = models.EmailField()
@@ -43,4 +44,4 @@ class Review(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f'Review {self.proposed_title} by {self.name}'
+        return f'Comment {self.proposed_title} by {self.name}'

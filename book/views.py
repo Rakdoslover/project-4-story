@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .models import Chapter, Review
-from .forms import ReviewForm
+from .models import Chapter, Comment
+from .forms import CommentForm
 
 
 from django.contrib.auth.mixins import (
@@ -21,7 +21,7 @@ class ChapterDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
         chapter = get_object_or_404(queryset, slug=slug)
-        reviews = chapter.reviews.filter(approved=True).order_by(
+        comments = chapter.commens.filter(approved=True).order_by(
             "-created_on"
         )
 
@@ -32,48 +32,46 @@ class ChapterDetail(View):
                 "chapter_detail.html",
                 {
                     "chapter": chapter,
-                    "reviews": reviews,
-                    "reviewed": False,
-                    "review_form": ReviewForm()
+                    "comments": comments,
+                    "commented": False,
+                    "comment_form": CommentForm()
                 },
             )
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
         chapter = get_object_or_404(queryset, slug=slug)
-        reviews = chapter.reviews.filter(approved=True).order_by(
+        comments = chapter.comments.filter(approved=True).order_by(
             "-created_on"
         )
 
-        review_form = ReviewForm(request.POST, request.FILES)
+        comment_form = CommentForm(request.POST, request.FILES)
 
-        if review_form.is_valid():
-            review_form.instance.name = request.user.username
-            review = review_form.save(commit=False)
-            # comment = chapter.comments.all()
-            review.post = chapter
-
-            review.save()
+        if comment_form.is_valid():
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = chapter
+            comment.save()
 
         else:
-            review_form = ReviewForm()
+            comment_form = CommentForm()
 
         return render(
             request,
             "chapter_detail.html",
             {
                 "chapter": chapter,
-                "reviews": reviews,
-                "reviewed": True,
-                "review_form": ReviewForm()
+                "comments": comments,
+                "commented": True,
+                "comment_form": CommentForm()
             },
         )
 
 
-class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, View):
-    """ Delete a review """
-    model = Review
-    success_url = '/chapter_detail/'
+# class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, View):
+#     """ Delete a review """
+#     model = Review
+#     success_url = '/chapter_detail/'
 
-    def test_func(self):
-        return self.request.user == self.get_object().user
+#     def test_func(self):
+#         return self.request.user == self.get_object().user

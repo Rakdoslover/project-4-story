@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Chapter, Review
+from .models import Chapter, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -13,8 +13,8 @@ class ChapterAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
 
 
-@admin.register(Review)
-class ReviewAdmin(admin.ModelAdmin):
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
     list_display = ('proposed_title', 'body', 'post', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('proposed_title', 'email', 'body')
