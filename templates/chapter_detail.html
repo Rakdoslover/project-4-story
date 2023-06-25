@@ -36,7 +36,7 @@
                 </p>
                 <div class="row">
                     <div class="col-1">
-                        {% with comments.count as total_commentss %}
+                        {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
@@ -65,6 +65,13 @@
                 <br>
                 <img src="{{ comment.featured_image.url }}" alt="Uploaded image" style="max-width: 400px; max-height: 300px;">
                 <br>
+                <br>
+                {% if user.is_authenticated %}
+                    <div class="text-center">
+                        <a href="#" class="btn btn-signup btn-sm">Edit</a>
+                        <a href="{% url 'delete_comment' comment.id %}" class="btn btn-signup btn-sm">Delete</a>
+                    </div>
+                {% endif %}
                 <hr>
                 {% endfor %}
             </div>

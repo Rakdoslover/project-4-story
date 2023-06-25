@@ -27,9 +27,13 @@ class Chapter(models.Model):
         return self.title
 
 
-# Main review model for the users
+# Main review/comment model for the users
 class Comment(models.Model):
 
+    # user = models.ForeignKey(
+    #     User, related_name="comment_owner", on_delete=models.CASCADE
+    # )
+    id = models.AutoField(primary_key=True)
     post = models.ForeignKey(Chapter, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)

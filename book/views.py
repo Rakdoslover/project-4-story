@@ -17,11 +17,16 @@ class ChapterList(generic.ListView):
 
 
 class ChapterDetail(View):
+
+    # def get_object(self, id):
+    #     comment = get_object_or_404(Comment, slug)
+    #     return
+
     """ Post/get function for reviews """
     def get(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
         chapter = get_object_or_404(queryset, slug=slug)
-        comments = chapter.commens.filter(approved=True).order_by(
+        comments = chapter.comments.filter(approved=True).order_by(
             "-created_on"
         )
 
@@ -68,10 +73,10 @@ class ChapterDetail(View):
         )
 
 
-# class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, View):
-#     """ Delete a review """
-#     model = Review
-#     success_url = '/chapter_detail/'
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, View):
+    """ Delete a comment """
+    model = Comment
+    success_url = '/chapter_detail/'
 
-#     def test_func(self):
-#         return self.request.user == self.get_object().user
+    def test_func(self, id):
+        return self.request.user == self.get_object().user
