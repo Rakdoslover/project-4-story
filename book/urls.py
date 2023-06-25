@@ -1,6 +1,5 @@
 from . import views
 from django.urls import path
-from .views import DeleteComment
 
 
 urlpatterns = [
@@ -15,7 +14,7 @@ urlpatterns = [
         name='chapter_detail/POST'
     ),
     path(
-        'delete/<slug:slug>/', views.DeleteComment.as_view(),
+        'delete_comment', views.DeleteComment.as_view(),
         name='delete_comment'
     ),
 ]

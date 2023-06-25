@@ -13,6 +13,7 @@ class Chapter(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="book_chapter"
     )
+    id = models.AutoField(primary_key=True)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)

@@ -78,5 +78,10 @@ class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, View):
     model = Comment
     success_url = '/chapter_detail/'
 
-    def test_func(self, id):
-        return self.request.user == self.get_object().user
+    # def test_func(self, id):
+    #     return self.request.user == self.get_object().user
+
+    def deleteComment(self, request, pk):
+        comment = Comment.objects.filter(post=pk).last()
+        comment.delete
+        return redirect('/chapter_detail/')
