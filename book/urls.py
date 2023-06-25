@@ -13,8 +13,4 @@ urlpatterns = [
         '<slug:slug>/POST', views.ChapterDetail.as_view(),
         name='chapter_detail/POST'
     ),
-    path(
-        'delete_comment', views.DeleteComment.as_view(),
-        name='delete_comment'
-    ),
 ]

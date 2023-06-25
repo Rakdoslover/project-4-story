@@ -13,7 +13,6 @@ class Chapter(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="book_chapter"
     )
-    id = models.AutoField(primary_key=True)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -31,10 +30,9 @@ class Chapter(models.Model):
 # Main review/comment model for the users
 class Comment(models.Model):
 
-    # user = models.ForeignKey(
-    #     User, related_name="comment_owner", on_delete=models.CASCADE
-    # )
-    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(
+        User, related_name="comment_owner", on_delete=models.CASCADE
+    )
     post = models.ForeignKey(Chapter, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)
