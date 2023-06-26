@@ -3,6 +3,7 @@ from django.views import generic, View
 from .models import Chapter, Comment
 from .forms import CommentForm
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 
 from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
@@ -19,6 +20,7 @@ class ChapterList(generic.ListView):
 class ChapterDetail(View):
 
     """ Post/get function for reviews """
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
         chapter = get_object_or_404(queryset, slug=slug)
@@ -52,6 +54,7 @@ class ChapterDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = chapter
+            comment.user = User.objects.get(id=request.user.id)
             comment.save()
 
         else:

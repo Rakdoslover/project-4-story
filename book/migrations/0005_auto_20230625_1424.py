@@ -16,12 +16,18 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='comment',
             name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='comment_owner', to='auth.user'),
+            field=models.ForeignKey(
+                default=1, on_delete=django.db.models.deletion.CASCADE,
+                related_name='comment_owner', to='auth.user'
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
             model_name='comment',
             name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False,
+                verbose_name='ID'
+            ),
         ),
     ]
