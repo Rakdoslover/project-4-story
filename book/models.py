@@ -30,6 +30,7 @@ class Chapter(models.Model):
 # Main review/comment model for the users
 class Comment(models.Model):
 
+    id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(
         User, related_name="comment_owner", on_delete=models.CASCADE
     )

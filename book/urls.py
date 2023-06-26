@@ -13,4 +13,8 @@ urlpatterns = [
         '<slug:slug>/POST', views.ChapterDetail.as_view(),
         name='chapter_detail/POST'
     ),
+    path(
+        'delete/<int:pk>/', views.DeleteComment.as_view(),
+        name='delete'
+    ),
 ]

@@ -4,9 +4,10 @@ from .models import Chapter, Comment
 from .forms import CommentForm
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.views.generic.edit import DeleteView
 
 from django.contrib.auth.mixins import (
-    UserPassesTestMixin, LoginRequiredMixin
+    LoginRequiredMixin
 )
 
 
@@ -72,7 +73,14 @@ class ChapterDetail(View):
         )
 
 
-class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, View):
+class DeleteComment(LoginRequiredMixin, DeleteView):
     """ Delete a comment """
     model = Comment
-    success_url = '/chapter_detail/'
+    success_url = 'chapter_detail'
+
+    template_name = 'templates/delete_comment.html'
+    # def delete(self, request, **kwargs):
+    #     self.object = self.get_objects()
+    #     success_url = self.get_success_url()
+    #     self.object.delete()
+    #     return HttpResponseRedirect(success_url)
