@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %} {%
-load static %}
+{% extends 'base.html' %}
+{% block content %} {% load crispy_forms_tags %}
+{% load static %}
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -14,9 +15,9 @@ load static %}
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                    <img src="" width="100%">
+                <img src="" width="100%">
                 {% else %}
-                    <img src="{{ chapter.featured_image.url }}" width="100%">
+                <img src="{{ chapter.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
