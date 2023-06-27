@@ -14,7 +14,11 @@ urlpatterns = [
         name='chapter_detail/POST'
     ),
     path(
-        'delete/<int:pk>/', views.DeleteComment.as_view(),
+        '<pk>/delete_comment/', views.DeleteComment.as_view(),
         name='delete'
+    ),
+    path(
+        '<pk>/delete_comment/post/', views.ChapterDetail.as_view(),
+        name='delete/reverse'
     ),
 ]

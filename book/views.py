@@ -76,9 +76,9 @@ class ChapterDetail(View):
 class DeleteComment(LoginRequiredMixin, DeleteView):
     """ Delete a comment """
     model = Comment
-    success_url = 'chapter_detail'
+    success_url = 'chapter_detail.html'
 
-    template_name = 'templates/delete_comment.html'
+    template_name = 'delete_comment.html'
     # def delete(self, request, **kwargs):
     #     self.object = self.get_objects()
     #     success_url = self.get_success_url()

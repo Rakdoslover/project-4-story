@@ -12,9 +12,9 @@ load static %}
                 </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                The featured image URL goes in the src attribute
+                <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                    <img src="{% static '/media/pictures/starry-sky.jpg' %}" width="100%">
+                    <img src="" width="100%">
                 {% else %}
                     <img src="{{ chapter.featured_image.url }}" width="100%">
                 {% endif %}
