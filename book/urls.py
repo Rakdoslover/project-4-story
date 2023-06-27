@@ -21,4 +21,8 @@ urlpatterns = [
         '<pk>/delete_comment/post/', views.ChapterDetail.as_view(),
         name='delete/reverse'
     ),
+    path(
+        '<pk>/update_comment/', views.UpdateComment.as_view(),
+        name='update'
+    ),
 ]

@@ -4,7 +4,7 @@ from .models import Chapter, Comment
 from .forms import CommentForm
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import DeleteView, UpdateView
 from django.urls import reverse_lazy
 
 from django.contrib.auth.mixins import (
@@ -85,8 +85,18 @@ class DeleteComment(LoginRequiredMixin, DeleteView):
     # success_url = 'chapter_detail'
 
     template_name = 'delete_comment.html'
-    # def delete(self, request, **kwargs):
-    #     self.object = self.get_objects()
-    #     success_url = self.get_success_url()
-    #     self.object.delete()
-    #     return HttpResponseRedirect(success_url)
+
+
+class UpdateComment(LoginRequiredMixin, UpdateView):
+    """ Update a comment """
+    model = Comment
+    fields = [
+        "proposed_title",
+        "featured_image"
+    ]
+
+    def get_success_url(self):
+        post = self.object.post
+        return reverse_lazy('chapter_detail', kwargs={'slug': post.slug})
+
+    template_name = 'update_comment.html'
