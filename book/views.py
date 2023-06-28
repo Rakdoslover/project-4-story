@@ -94,7 +94,7 @@ class UpdateComment(LoginRequiredMixin, UpdateView):
         "proposed_title",
         "featured_image"
     ]
-    
+
     def get_success_url(self):
         post = self.object.post
         return reverse_lazy('chapter_detail', kwargs={'slug': post.slug})
