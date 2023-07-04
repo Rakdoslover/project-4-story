@@ -64,7 +64,7 @@
                     style="max-width: 400px; max-height: 300px" />
                 <br />
                 <br />
-                
+
                 {% if user.is_authenticated and user == comment.user %}
                 <div class="text-center">
                     <a href="{% url 'update' pk=comment.id %}" class="btn btn-signup btn-sm">Edit</a>
