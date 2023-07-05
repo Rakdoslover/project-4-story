@@ -8,7 +8,15 @@ picture, the users may propose a title and a picture for this weeks chapter.
 By the end of the week the author picks the one he/she likes the most and
 renames the chapter and updates the picture accordingly.
 
-##
+## **[Live Site](https://the-lonely-beach-project-aff864383002.herokuapp.com/)**
+
+---
+
+## **[Repository](https://github.com/Rakdoslover/project-4-story)**
+
+---
+
+
 
 ## User Stories
 
@@ -19,6 +27,35 @@ renames the chapter and updates the picture accordingly.
 2.
 
 -
+
+## Testing
+
+**TESTING** | **ACTION** | **EXPECTATION** | **RESULT**
+----------|----------|----------|----------
+Home Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
+Home Page	| Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
+Login form | Click "Signin" button without data in form fields | Cannot submit form | Works as expected
+Logout form | Click "Signout" button | Submits form and logs out user | Works as expected
+Signup form | Click "Signup" button without data in form fields | Cannot submit form | Works as expected
+Nav bar - home page | Click home button | Home button takes me to the home page | Works as expected
+Nav bar - register page | Click register button | Register button takes me to the signup page | Works as expected
+Nav bar - login page | Click login button | Login button takes me to the signin page | Works as expected
+Nav bar - logout page | Click logout button | Logout button takes me to the signout page | Works as expected
+Chapter Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
+Chapter Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
+Login Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
+Login Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
+Signup Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
+Signup Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
+Logout Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
+Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
+
+
+
+## Screenshots
+
+### Responsiveness
+
 
 ## Future Implementations
 
