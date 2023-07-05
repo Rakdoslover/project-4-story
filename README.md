@@ -18,14 +18,14 @@ renames the chapter and updates the picture accordingly.
 ## Table of contents
 <a name="contents">Back to Top</a>
  1. [ UX ](#ux)
- 2. [Agile Development](#agile)
- 3. [ Features ](#features)  
- 4. [ Features Left to Implement ](#left)  
- 5. [ Technology used ](#tech) 
- 6. [ Testing ](#testing)  
- 7. [ Bugs ](#bugs)  
- 8. [ Credits](#credits)
- 9. [ Content](#content)  
+ 2. [ User Stories ](#userstories)
+ 3. [ Features ](#features)
+ 4. [ Technology Used ](#tech)  
+ 5. [ Testing ](#testing)   
+ 6. [ Screenshots ](#screenshots) 
+ 7. [ Future Implemetations ](#future)  
+ 8. [ Content ](#content)  
+ 9. [ Credits](#credits) 
  10. [ Acknowledgements](#acknowledgements)
 
 ## UX
@@ -76,19 +76,153 @@ renames the chapter and updates the picture accordingly.
 |Approved|BooleanField|
 |Featured Image|CloudinaryField|
 
+[Back to Top of page](#ux)
+
 ---
 
-### User Stories
+## User Stories and Project
+<a name="userstories"></a>
 
-1. Create account
+### Goal
+---
+The main goal for this project is to create a user friendly site with a simple
+authentication login/signup and a place interactive storytelling platform.
+Users are supposed to read the chapters published and dependeing on the theme of
+the story post a comment with a proposed title and a featured image with connections
+to the them of the text.
+The comments are, if you're authorized and logged in, CRUD friendly.
 
-- As a User I can create an accout so that ** I can publish a comment**.
+### Agile Project
+---
+This project was started alongside a GitHub Projects Page to track issues that I had to solve further on.
+The initial aim was to track steps and features needed to get the functionallity and layout as per project goal. 
+I wrote epics with different themes according to what the user/admin/author wanted
+to be able to do.
 
-2.
+---
+To see Kanban please click [here](https://github.com/users/Rakdoslover/projects/5/views/1)
 
--
+I recognized 7 epics that would make the site work in the way I wanted and needed.
+I also got 1 story I would like to have implemented but couldn't find time for.
+
+For these 7, I made issues through the "project 4 story" Project on repository.
+The plan was to make them all at first and cross them out as the project progressed,
+but at times I got stuck on problems not forseen, which caused me to cross them off
+a little more haphazardly.
+
+#### User stories
+
+Down below you can find both the fulfilled stories but also those not completed.
+
+##### Completed
+
+1. [USER STORY: Create Account](https://github.com/Rakdoslover/project-4-story/issues/1)
+2. [USER STORY: Admin Page](https://github.com/Rakdoslover/project-4-story/issues/2)
+3. [USER STORY: Site Pagination](https://github.com/Rakdoslover/project-4-story/issues/3)
+4. [USER STORY: Create Comment](https://github.com/Rakdoslover/project-4-story/issues/4)
+5. [USER STORY: Deploy the Site](https://github.com/Rakdoslover/project-4-story/issues/5)
+6. [USER STORY: UD Comments](https://github.com/Rakdoslover/project-4-story/issues/6)
+7. [USER STORY: View Comments](https://github.com/Rakdoslover/project-4-story/issues/7)
+
+##### Uncompleted
+
+1. [USER STORY: Rate Comments](https://github.com/Rakdoslover/project-4-story/issues/8)
+
+---
+
+## Features
+<a name="features"></a>
+
+#### Users can:
+
+- **Users can** create an account (**Create**)
+- **Users can** log into their account
+- **Users can** log out of their account
+- **Users can** create comment on chapter **(Create)**
+- **Users can** read comments from other members *(**Read**)
+- **Users can** view chapters from home page (**Read**)
+- **Users can** edit their own comments (**Update**)
+- **Users can** delete their own comments (**Delete**)
+- **Users can** edit and delete others comments/chapters if they have superuser status through the adminpanel (**Update/Delete**)
+
+#### User cannot:
+
+- **Users cannot** post comments without an account or being logged in.
+- **Users cannot** edit comments they've made previously without being logged in.
+- **Users cannot** access the admin panel of the website unless they have admin status.
+- **Users cannot** 
+
+#### Website Features
+
+##### Chapters on Home page
+
+- Chapters are published in order of newest to oldest so that it's easy for members to find the newest chapter in the story.
+- Chapters are paginated to a maximum of 6 per side to not fill up the whole screen with chapters.
+- User are able to get a small excerpt of what the theme of the chapter is.
+
+##### Chapter Detail page
+
+- Users are able to read the published chapter on a separate page than the home screen.
+- Users are able to comment, if authorized, and participate in the stories community.
+- users can use CRUD to change what they already commented or delete it completely.
+
+[Back to Top of page](#userstories)
+
+---
+
+
+##  Technology Used
+<a name="tech"></a>
+
+---
+
+### Html
+
+ - Used to structure my webpages and the base templating language.
+
+### CSS
+
+ - Custom CSS was written on bits to make it stick out but played a background role over functionality.
+
+### Python
+
+ -  Used for the logic in this project.
+
+### Django
+
+ -  Framework used to build this project. Provides a ready installed admin panel and includes many helper template tags that make writing code quick and efficient.
+
+### Bootstrap 5
+ - Used as the base front end framework to work alongside Django.
+
+### Allauth
+ - To implement quick and easy user registration and login, modified after implemetations
+
+### GitHub
+ - Used to store the code for this project & for the projects Kanban board used to complete it.
+
+### Heroku
+- Used to host and deploy this project.
+
+### ElephanSQL
+- Heroku PostgreSQL was used as the database for this project during development and in production.
+
+### Cloudinary
+- Used to host the static files for this project including users featured images.
+
+### Git
+- Used for version control throughout the project and to ensure a good clean record of work done was maintained.
+
+### Lucidcharts
+- Used for to visulize the database structure
+
+
+[Back to Top of page](#tech)
+
+---
 
 ## Testing
+<a name="testing"></a>
 
 **TESTING** | **ACTION** | **EXPECTATION** | **RESULT**
 ----------|----------|----------|----------
@@ -138,7 +272,15 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
         - No errors in code except settings.
         - The settings still shows 5 lines that're too long. These will not be correct due to them being installed/written by DJango. 
 
-### Screenshots
+[Back to Top of page](#testing)
+
+---
+
+## Screenshots
+<a name="screenshots"></a>
+
+---
+
 #### Home Page
 ---
 Main page of my site, this is where we draw our users attention.
@@ -229,7 +371,14 @@ This fulfills the D in CRUD.
 And here we have it opened and scaled down to 320px width.
 [Delete Page 320px](/media/pictures/delete-page-320.jpg)
 
+[Back to Top of page](#screenshots)
+
+---
+
 ## Future Implementations
+<a name="future"></a>
+
+---
 
 <strong>1. Poll:</strong>
 The initial idea was to create a poll for the user to voted on 1 of 2 choices
@@ -289,9 +438,12 @@ impossible to redirect the right static to the files.
 It took both help from tutors and the slack community to address the issue but
 it was resolved at last.
 
+[Back to Top of page](#future)
 
+---
 
 ## Content
+<a name="content"></a>
   
 ##### Django Documentation
   - Read through the django documentation multiple times to get to grips with the basics regarding models.
@@ -314,3 +466,34 @@ it was resolved at last.
 [Back to Top of page](#content)
 
 ---
+
+## Credits
+<a name="credits"></a>
+
+##### Code institue Django3blog
+- I started the project using the blog template from https://github.com/Code-Institute-Solutions/Django3blog
+- This gave me a guide how to develop the project, install all parts and deploy to Heroku.
+- It also gave me the starting baseline for my inital CSS/settings/url/models/Base and Index template/admin and start view functions.
+- I copied and used the Allauth templates for sign-up/-in/-out 
+- This allowed me to test with trial and error (with django documentations and stackoverflow as my handbook).
+
+##### Mentoring
+- I had a couple of down periods during this project and had a really hard time grasping exactly what I need, but my mentor allways pushed onwards.
+- She had some really cool ideas, tip and tricks for me to test, that includes documentation to read or videos to watch.
+
+
+##### [Dee Mc](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&ab_channel=DeeMc)
+- A video series on Youtube describing really well how to get past some of the hurdles on my project.
+- This was one of the tips I got from my mentor and it really did some wonders.
+
+##### Tutor sessions
+- Those hard hours were made so much easier by the giant help of the tutors.
+- They've giving me alot of different ways to look at an issue and maybe getting it to work another way.
+
+
+
+## Acknowledgements
+<a name="acknowledgements"></a>
+
+### My family
+- I haven't been very chearful the last couple of weeks but my family has allways managed to put a smile on my face during the hardest hours.
