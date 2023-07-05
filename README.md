@@ -206,6 +206,12 @@ And here we have it opened and scaled down to 320px width.
 [Chapter Page 320px](/media/pictures/chapter-320.jpg)
 
 #### Update Page
+---
+
+
+##### Responsiveness Update Page
+---
+
 
 ## Future Implementations
 
