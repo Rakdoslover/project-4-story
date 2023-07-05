@@ -8,17 +8,77 @@ picture, the users may propose a title and a picture for this weeks chapter.
 By the end of the week the author picks the one he/she likes the most and
 renames the chapter and updates the picture accordingly.
 
-## **[Live Site](https://the-lonely-beach-project-aff864383002.herokuapp.com/)**
+### **[Live Site](https://the-lonely-beach-project-aff864383002.herokuapp.com/)**
 
 ---
 
-## **[Repository](https://github.com/Rakdoslover/project-4-story)**
+### **[Repository](https://github.com/Rakdoslover/project-4-story)**
+
+---
+## Table of contents
+<a name="contents">Back to Top</a>
+ 1. [ UX ](#ux)
+ 2. [Agile Development](#agile)
+ 3. [ Features ](#features)  
+ 4. [ Features Left to Implement ](#left)  
+ 5. [ Technology used ](#tech) 
+ 6. [ Testing ](#testing)  
+ 7. [ Bugs ](#bugs)  
+ 8. [ Credits](#credits)
+ 9. [ Content](#content)  
+ 10. [ Acknowledgements](#acknowledgements)
+
+## UX
+<a name="ux"></a>
+
+![Lucid Chart](/media/pictures/database-structure.jpg)
+
+### Database 
+#### AllAuth User
+
+| id | Field |
+|--|--|
+| User |OneToOneField  |
+| Username |Charfield|
+|email|EmailField|
+|Password|Charfield|
 
 ---
 
+#### Chapter Model
 
+| id | Field |
+|--|--|
+|Title|Charfield|
+|Slug|Slugfield|
+|Author|Foreignkey|
+|Featured Image|Cloudinary image|
+|Excerpt|TextField|
+|Updated on|DateTimeField|
+|Content|TextField|
+|Created on|Datefield|
+|Status|IntegerField|
 
-## User Stories
+---
+
+#### Comment Model
+
+| id | Field |
+|--|--|
+|ID|BigAutoField|
+|User|Foreignkey|
+|Post|ForeignKey|
+|Name|CharField|
+|Proposed Title|CharField|
+|Email|EmailField|
+|Body|TextField|
+|Created on|DateTimeField|
+|Approved|BooleanField|
+|Featured Image|CloudinaryField|
+
+---
+
+### User Stories
 
 1. Create account
 
@@ -52,7 +112,7 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 
 
 
-## Screenshots
+### Screenshots
 
 ### Responsiveness
 
@@ -97,9 +157,9 @@ would be a good idea for the users to have more control over their own pages.
 This one doesn't seem far off as I think I will be able to apply this soon after
 the E-commerce section is done.
 
-## Problems/Errors left
+### Problems/Errors left
 
-### Disclaimer:
+#### Disclaimer:
 
 There are 5 error indicating lines that're too long in my settings.py file,
 I've intentionally left them in because they were created when django was
