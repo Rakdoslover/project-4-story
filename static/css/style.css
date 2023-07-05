@@ -1,7 +1,10 @@
+/* CSS borrowed from the walkthrough in "I Think Therefore I Blog" */
+
 body {
     background-color: #F9FAFC;
 }
 
+/*----- Google Fonts -----*/
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -140,3 +143,19 @@ body {
     background: transparent;
     border: none;
 }
+
+
+/*-------------------- @MEDIA QUERIES --------------------*/
+
+/*---------- 600px tablets ----------*/
+@media (min_width: 600px)
+    .container {
+        width: 90%;
+    }
+
+
+/*---------- 992px tablets ----------*/
+@media (min_width: 992px)
+    .container {
+        width: 75%;
+    }

@@ -207,11 +207,27 @@ And here we have it opened and scaled down to 320px width.
 
 #### Update Page
 ---
-
+This is the Update page where the user can change their previous entries.
+After a valid new form has been submitted, the button will take them back to the site.
+This fulfills the U in CRUD.
+[Update Page](/media/pictures/update-page.jpg)
 
 ##### Responsiveness Update Page
 ---
+And here we have it opened and scaled down to 320px width.
+[Update Page 320px](/media/pictures/update-page-320.jpg)
 
+#### Delete Page
+---
+This is the Delete page where the user can delete their own comment.
+After the button is pressed, it will take them back to the site.
+This fulfills the D in CRUD.
+[Delete Page](/media/pictures/delete-page.jpg)
+
+##### Responsiveness Delete Page
+---
+And here we have it opened and scaled down to 320px width.
+[Delete Page 320px](/media/pictures/delete-page-320.jpg)
 
 ## Future Implementations
 
