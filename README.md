@@ -113,8 +113,19 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 ### Validators
 
 #### HTML
-- ![W3C HTML Validator]()
-    - Checked all 
+- [W3C HTML Validator](https://validator.w3.org/)
+    - Checked all HTML-fiels checked.
+    - Had minor errors mostly called by the django templating inside the HTML.
+        - Errors corrected by [commit: b15573e](https://github.com/Rakdoslover/project-4-story/commit/b15573e31dafd501b9720b6330692526b2dfd3d4)
+        - The remaining validation issues are all attributed to Django Templating not being recognized by W3C:
+            - **Warning**: Consider adding a `lang` attribute to the `html` start tag to declare the language of this document
+            - **Error**: Non-space characters found without seeing a doctype first. Expected `<!DOCTYPE html>`
+            - **Warning**: This document appears to be written in English. Consider adding `lang="en"` (or variant) to the `html` start tag
+            - **Error**: Element `head` is missing a required instance of child element `title`
+            - **Error**: Bad value `{% foo %}`
+
+#### CSS
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri)
 
 ### Screenshots
 
