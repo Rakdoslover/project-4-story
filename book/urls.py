@@ -2,6 +2,7 @@ from . import views
 from django.urls import path
 
 
+# Url paterns for the views
 urlpatterns = [
     path("", views.ChapterList.as_view(), name="home"),
     path('<slug:slug>/', views.ChapterDetail.as_view(), name='chapter_detail'),

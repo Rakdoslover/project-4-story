@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import (
 )
 
 
+# View for home page, with chapters
 class ChapterList(generic.ListView):
     model = Chapter
     queryset = Chapter.objects.filter(status=1).order_by("-created_on")
@@ -19,6 +20,7 @@ class ChapterList(generic.ListView):
     paginate_by = 6
 
 
+# View for chapter detail page
 class ChapterDetail(View):
 
     """ Post/get function for reviews """
@@ -43,6 +45,7 @@ class ChapterDetail(View):
                 },
             )
 
+    # Function for posting a comment
     def post(self, request, slug, *args, **kwargs):
         queryset = Chapter.objects.filter(status=1)
         chapter = get_object_or_404(queryset, slug=slug)
@@ -74,6 +77,7 @@ class ChapterDetail(View):
         )
 
 
+# Delete comment view
 class DeleteComment(LoginRequiredMixin, DeleteView):
     """ Delete a comment """
     model = Comment
@@ -87,6 +91,7 @@ class DeleteComment(LoginRequiredMixin, DeleteView):
     template_name = 'delete_comment.html'
 
 
+# Update comment view
 class UpdateComment(LoginRequiredMixin, UpdateView):
     """ Update a comment """
     model = Comment

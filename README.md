@@ -185,7 +185,27 @@ A simple page that takes the user back to the home page after signing out.
 And here we have it opened and scaled down to 320px width.
 [Logout Page 320px](/media/pictures/logout-page-320.jpg)
 
-#### Chapter Page
+#### Chapter Page (upper)
+---
+This is where most of the interaction happens.
+The chosen chapter, published by the author, is being displayed and the user can
+see the placeholder image from the author and the story down below.
+[Chapter Page upper](/media/pictures/chapter-text.jpg)
+
+#### Chapter Page (lower)
+---
+Further down below the users can interact by uploading a proposed new title for
+this weeks chapter, and also upload an image symbolizing the story.
+This is where they can make use of the CRUD functionality for real.
+While logged in you can Create, Read, Update and Delete your own comments.
+[Chapter Page lower](/media/pictures/chapter-comment.jpg)
+
+##### Responsiveness Chapter Page
+---
+And here we have it opened and scaled down to 320px width.
+[Chapter Page 320px](/media/pictures/chapter-320.jpg)
+
+#### Update Page
 
 ## Future Implementations
 
