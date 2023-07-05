@@ -130,16 +130,62 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 
 #### Pip8 Validation
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
-    - [settings.py](/media/pictures/)
-    - [forms.py]()
-    - [models.py]()
-    - [urls.py]()
-    - [views.py]()
+    - [settings.py](/media/pictures/settings.jpg)
+    - [forms.py](/media/pictures/forms.jpg)
+    - [models.py](/media/pictures/models.jpg)
+    - [urls.py](/media/pictures/urls.jpg)
+    - [views.py](/media/pictures/views.jpg)
+        - No errors in code except settings.
+        - The settings still shows 5 lines that're too long. These will not be correct due to them being installed/written by DJango. 
 
 ### Screenshots
+#### Home Page
+---
+Main page of my site, this is where we draw our users attention.
+Here we can see the navbar with it's few but simple options(home, login & register),
+the latest chapters sorted by newest to oldest and at the bottom a small footer.
+[Home Page](/media/pictures/home-page.jpg)
+##### Responsiveness Home Page
+---
+And here we have it opened and scaled down to 320px width.
+The navbar is opened to show how it looks downscaled.
+[Home Page 320px](/media/pictures/home-page-320.jpg)
 
-### Responsiveness
+#### Register Page
+---
+The register/signup page is based on the Allauth templates with some modifications.
+It should be simple and easy to use, user should be able to just register a
+username and a password to get access to the comment section.
+[Register Page](/media/pictures/register-page.jpg)
 
+##### Responsiveness Register Page
+---
+And here we have it opened and scaled down to 320px width.
+[Register Page 320px](/media/pictures/register-page-320.jpg)
+
+#### Login page
+---
+This is the login page for the users.
+A simple page that takes the user back to the home page after signing in.
+[Login Page](/media/pictures/login-page.jpg)
+
+#####  Responsiveness Login Page
+---
+And here we have it opened and scaled down to 320px width.
+[Login Page 320px](/media/pictures/login-page-320.jpg)
+
+#### Logout Page
+---
+This is the logout page for the users.
+A simple page that takes the user back to the home page after signing out.
+[Logout Page](/media/pictures/logout-page.jpg)
+
+#####  Responsiveness Logout Page
+---
+And here we have it opened and scaled down to 320px width.
+[Logout Page 320px](/media/pictures/logout-page-320.jpg)
+
+#### Chapter Page
 
 ## Future Implementations
 
@@ -200,3 +246,29 @@ my workspace. This coupled with the fact that I copied them manually made it
 impossible to redirect the right static to the files.
 It took both help from tutors and the slack community to address the issue but
 it was resolved at last.
+
+
+
+## Content
+  
+##### Django Documentation
+  - Read through the django documentation multiple times to get to grips with the basics regarding models.
+
+##### Geeks for Geeks.com
+  - Used their walkthroughs and tips to get the CRUD just right for the comments CRUD by user.
+
+##### Stackoverflow
+  - I've read an ocean of questions and answers on Stackoverflow, some helpful some worthless.
+    But when they actually helped me it really did the job.
+  
+##### W3 Schools
+  - Used for reference throughout for simple HTML/CSS examples.
+  
+##### Code Institute
+  - Course content for portfolio project 4 helped greatly in being able to complete this project.
+  - Initial structure **based heavily** on the CI walkthrough of the "I Think Therefore I Blog".
+  - Legacy code regarding Base/index.html and accompaning CSS remains.
+
+[Back to Top of page](#content)
+
+---
