@@ -122,10 +122,19 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
             - **Error**: Non-space characters found without seeing a doctype first. Expected `<!DOCTYPE html>`
             - **Warning**: This document appears to be written in English. Consider adding `lang="en"` (or variant) to the `html` start tag
             - **Error**: Element `head` is missing a required instance of child element `title`
-            - **Error**: Bad value `{% foo %}`
+            - **Error**: 
 
 #### CSS
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri)
+    - No errors found.
+
+#### Pip8 Validation
+- [CI Python Linter](https://pep8ci.herokuapp.com/)
+    - [settings.py](/media/pictures/)
+    - [forms.py]()
+    - [models.py]()
+    - [urls.py]()
+    - [views.py]()
 
 ### Screenshots
 
