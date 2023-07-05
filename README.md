@@ -110,7 +110,11 @@ Signup Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 Logout Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
 Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
 
+### Validators
 
+#### HTML
+- ![W3C HTML Validator]()
+    - Checked all 
 
 ### Screenshots
 

@@ -15,9 +15,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="" width="100%">
+                <img src="/media/pictures/starry-sky.jpg" width="100%" alt="chapter image">
                 {% else %}
-                <img src="{{ chapter.featured_image.url }}" width="100%">
+                <img src="{{ chapter.featured_image.url }}" width="100%" alt="chapter image">
                 {% endif %}
             </div>
         </div>
@@ -44,7 +44,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <hr />
+            <hr>
         </div>
     </div>
     <div class="row">
@@ -55,15 +55,15 @@
                 {%for comment in comments %}
                 <strong>
                     {{ comment.name }}
-                    <br />
-                    <br />
+                    <br>
+                    <br>
                     Proposed chapter title: {{ comment.proposed_title }}
                 </strong>
-                <br />
+                <br>
                 <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
                     style="max-width: 400px; max-height: 300px" />
-                <br />
-                <br />
+                <br>
+                <br>
 
                 {% if user.is_authenticated and user == comment.user %}
                 <div class="text-center">
@@ -71,7 +71,7 @@
                     <a href="{% url 'delete' pk=comment.id %}" class="btn btn-signup btn-sm">Delete</a>
                 </div>
                 {% endif %}
-                <hr />
+                <hr>
                 {% endfor %}
             </div>
         </div>
@@ -88,7 +88,7 @@
                 <p>Posting as: {{ user.username }}</p>
                 <form method="POST" style="margin-top: 1.3em" enctype="multipart/form-data">
                     {{ comment_form | crispy }} {% csrf_token %}
-                    <br />
+                    <br>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %} {% endif %}
