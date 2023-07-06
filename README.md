@@ -226,6 +226,8 @@ Down below you can find both the fulfilled stories but also those not completed.
 ## Testing
 <a name="testing"></a>
 
+
+### Main Site Testing
 **TESTING** | **ACTION** | **EXPECTATION** | **RESULT**
 ----------|----------|----------|----------
 Home Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
@@ -246,6 +248,63 @@ Signup Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 Logout Page   | Size to 320px using Chrome Dev Tools | Elements look good @ 320px | Works as expected
 Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 1920px | Works as expected
 
+### Account Registration
+| Test | Result |
+|--|--|
+| User can create account |Pass|
+| User can log into account |Pass|
+| User can log out of account |Pass|
+
+---
+
+### Chapter and Pagination 
+| Test | Result |
+|--|--|
+| User can open each chapter paginated on the site |Pass|
+| User can go back and forth between sites with Next/Prev-button |Pass|
+| User can see chapters without being logged in |Pass|
+
+---
+
+### Nav Bar
+| Test | Result |
+|--|--|
+| Users can engage with the nav bar on the home page | Pass |
+| Users can engage with the nav bar on each of the login/logout/signup pages | Pass |
+| Users can engage with the nav bar on the chapter detail page | Pass |
+
+---
+
+### Create Comment and Read Comments
+| Test | Result |
+|--|--|
+| Authorized users can comment on a specific chapter | Pass |
+| All users can read comments posted by authorized users | Pass |
+
+---
+
+### Update Comment and Delete Comment
+| Test | Result |
+|--|--|
+| Authorized users can update a previously published comment they own | Pass |
+| Authorized users can delete a previously published comment they own | Pass |
+
+---
+
+#### Admin Tests
+
+| Test | Result  |
+|--|--|
+| Admin can add chapters from adminpanel |Pass|
+| Admin can add comments from adminpanel |Pass|
+| Admin can update chapters from adminpanel |Pass|
+| Admin can update comments from adminpanel |Pass|
+| Admin can delete chapters from adminpanel |Pass|
+| Admin can delete comments from adminpanel |Pass|
+| Admin can create/update/delete user profiles from adminpanel |Pass|
+
+---
+
 ### Validators
 
 #### HTML
@@ -258,7 +317,6 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
             - **Error**: Non-space characters found without seeing a doctype first. Expected `<!DOCTYPE html>`
             - **Warning**: This document appears to be written in English. Consider adding `lang="en"` (or variant) to the `html` start tag
             - **Error**: Element `head` is missing a required instance of child element `title`
-            - **Error**: 
 
 #### CSS
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri)
