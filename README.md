@@ -226,6 +226,8 @@ Down below you can find both the fulfilled stories but also those not completed.
 ## Testing
 <a name="testing"></a>
 
+Tested the site on Google Chrome and Microsoft Edge, both of them worked the same
+with the tests provided below.
 
 ### Main Site Testing
 **TESTING** | **ACTION** | **EXPECTATION** | **RESULT**
