@@ -552,6 +552,10 @@ it was resolved at last.
 - Those hard hours were made so much easier by the giant help of the tutors.
 - They've giving me alot of different ways to look at an issue and maybe getting it to work another way.
 
+##### Various old students README-files
+- I've gotten some great tips from former students/lecturers on how to write the README.
+- They gave both tips on the structure but also the contents.
+
 [Back to Top of page](#tcontents)
 
 
