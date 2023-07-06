@@ -16,7 +16,7 @@ renames the chapter and updates the picture accordingly.
 
 ---
 ## Table of contents
-<a name="contents">Back to Top</a>
+<a name="tcontents">Back to Top</a>
  1. [ UX ](#ux)
  2. [ User Stories ](#userstories)
  3. [ Features ](#features)
@@ -76,7 +76,7 @@ renames the chapter and updates the picture accordingly.
 |Approved|BooleanField|
 |Featured Image|CloudinaryField|
 
-[Back to Top of page](#ux)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -128,7 +128,7 @@ Down below you can find both the fulfilled stories but also those not completed.
 
 1. [USER STORY: Rate Comments](https://github.com/Rakdoslover/project-4-story/issues/8)
 
-[Back to Top of page](#userstories)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -168,7 +168,7 @@ Down below you can find both the fulfilled stories but also those not completed.
 - Users are able to comment, if authorized, and participate in the stories community.
 - users can use CRUD to change what they already commented or delete it completely.
 
-[Back to Top of page](#features)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -219,7 +219,7 @@ Down below you can find both the fulfilled stories but also those not completed.
 - Used for to visulize the database structure
 
 
-[Back to Top of page](#tech)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -274,7 +274,7 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
         - No errors in code except settings.
         - The settings still shows 5 lines that're too long. These will not be correct due to them being installed/written by DJango. 
 
-[Back to Top of page](#testing)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -373,7 +373,7 @@ This fulfills the D in CRUD.
 And here we have it opened and scaled down to 320px width.
 ![Delete Page 320px](/media/pictures/delete-page-320.jpg)
 
-[Back to Top of page](#screenshots)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -440,7 +440,7 @@ impossible to redirect the right static to the files.
 It took both help from tutors and the slack community to address the issue but
 it was resolved at last.
 
-[Back to Top of page](#future)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -465,7 +465,7 @@ it was resolved at last.
   - Initial structure **based heavily** on the CI walkthrough of the "I Think Therefore I Blog".
   - Legacy code regarding Base/index.html and accompaning CSS remains.
 
-[Back to Top of page](#content)
+[Back to Top of page](#tcontents)
 
 ---
 
@@ -492,7 +492,7 @@ it was resolved at last.
 - Those hard hours were made so much easier by the giant help of the tutors.
 - They've giving me alot of different ways to look at an issue and maybe getting it to work another way.
 
-[Back to Top of page](#credits)
+[Back to Top of page](#tcontents)
 
 
 ## Acknowledgements
@@ -501,4 +501,4 @@ it was resolved at last.
 ### My family
 - I haven't been very chearful the last couple of weeks but my family has allways managed to put a smile on my face during the hardest hours.
 
-[Back to Top of page](#acknowledgements)
+[Back to Top of page](#tcontents)
