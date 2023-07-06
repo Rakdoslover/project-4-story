@@ -128,6 +128,8 @@ Down below you can find both the fulfilled stories but also those not completed.
 
 1. [USER STORY: Rate Comments](https://github.com/Rakdoslover/project-4-story/issues/8)
 
+[Back to Top of page](#userstories)
+
 ---
 
 ## Features
@@ -166,7 +168,7 @@ Down below you can find both the fulfilled stories but also those not completed.
 - Users are able to comment, if authorized, and participate in the stories community.
 - users can use CRUD to change what they already commented or delete it completely.
 
-[Back to Top of page](#userstories)
+[Back to Top of page](#features)
 
 ---
 
@@ -286,53 +288,53 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 Main page of my site, this is where we draw our users attention.
 Here we can see the navbar with it's few but simple options(home, login & register),
 the latest chapters sorted by newest to oldest and at the bottom a small footer.
-[Home Page](/media/pictures/home-page.jpg)
+![Home Page](/media/pictures/home-page.jpg)
 ##### Responsiveness Home Page
 ---
 And here we have it opened and scaled down to 320px width.
 The navbar is opened to show how it looks downscaled.
-[Home Page 320px](/media/pictures/home-page-320.jpg)
+![Home Page 320px](/media/pictures/home-page-320.jpg)
 
 #### Register Page
 ---
 The register/signup page is based on the Allauth templates with some modifications.
 It should be simple and easy to use, user should be able to just register a
 username and a password to get access to the comment section.
-[Register Page](/media/pictures/register-page.jpg)
+![Register Page](/media/pictures/register-page.jpg)
 
 ##### Responsiveness Register Page
 ---
 And here we have it opened and scaled down to 320px width.
-[Register Page 320px](/media/pictures/register-page-320.jpg)
+![Register Page 320px](/media/pictures/register-page-320.jpg)
 
 #### Login page
 ---
 This is the login page for the users.
 A simple page that takes the user back to the home page after signing in.
-[Login Page](/media/pictures/login-page.jpg)
+![Login Page](/media/pictures/login-page.jpg)
 
 #####  Responsiveness Login Page
 ---
 And here we have it opened and scaled down to 320px width.
-[Login Page 320px](/media/pictures/login-page-320.jpg)
+![Login Page 320px](/media/pictures/login-page-320.jpg)
 
 #### Logout Page
 ---
 This is the logout page for the users.
 A simple page that takes the user back to the home page after signing out.
-[Logout Page](/media/pictures/logout-page.jpg)
+![Logout Page](/media/pictures/logout-page.jpg)
 
 #####  Responsiveness Logout Page
 ---
 And here we have it opened and scaled down to 320px width.
-[Logout Page 320px](/media/pictures/logout-page-320.jpg)
+![Logout Page 320px](/media/pictures/logout-page-320.jpg)
 
 #### Chapter Page (upper)
 ---
 This is where most of the interaction happens.
 The chosen chapter, published by the author, is being displayed and the user can
 see the placeholder image from the author and the story down below.
-[Chapter Page upper](/media/pictures/chapter-text.jpg)
+![Chapter Page upper](/media/pictures/chapter-text.jpg)
 
 #### Chapter Page (lower)
 ---
@@ -340,36 +342,36 @@ Further down below the users can interact by uploading a proposed new title for
 this weeks chapter, and also upload an image symbolizing the story.
 This is where they can make use of the CRUD functionality for real.
 While logged in you can Create, Read, Update and Delete your own comments.
-[Chapter Page lower](/media/pictures/chapter-comment.jpg)
+![Chapter Page lower](/media/pictures/chapter-comment.jpg)
 
 ##### Responsiveness Chapter Page
 ---
 And here we have it opened and scaled down to 320px width.
-[Chapter Page 320px](/media/pictures/chapter-320.jpg)
+![Chapter Page 320px](/media/pictures/chapter-320.jpg)
 
 #### Update Page
 ---
 This is the Update page where the user can change their previous entries.
 After a valid new form has been submitted, the button will take them back to the site.
 This fulfills the U in CRUD.
-[Update Page](/media/pictures/update-page.jpg)
+![Update Page](/media/pictures/update-page.jpg)
 
 ##### Responsiveness Update Page
 ---
 And here we have it opened and scaled down to 320px width.
-[Update Page 320px](/media/pictures/update-page-320.jpg)
+![Update Page 320px](/media/pictures/update-page-320.jpg)
 
 #### Delete Page
 ---
 This is the Delete page where the user can delete their own comment.
 After the button is pressed, it will take them back to the site.
 This fulfills the D in CRUD.
-[Delete Page](/media/pictures/delete-page.jpg)
+![Delete Page](/media/pictures/delete-page.jpg)
 
 ##### Responsiveness Delete Page
 ---
 And here we have it opened and scaled down to 320px width.
-[Delete Page 320px](/media/pictures/delete-page-320.jpg)
+![Delete Page 320px](/media/pictures/delete-page-320.jpg)
 
 [Back to Top of page](#screenshots)
 
@@ -490,6 +492,7 @@ it was resolved at last.
 - Those hard hours were made so much easier by the giant help of the tutors.
 - They've giving me alot of different ways to look at an issue and maybe getting it to work another way.
 
+[Back to Top of page](#credits)
 
 
 ## Acknowledgements
@@ -497,3 +500,5 @@ it was resolved at last.
 
 ### My family
 - I haven't been very chearful the last couple of weeks but my family has allways managed to put a smile on my face during the hardest hours.
+
+[Back to Top of page](#acknowledgements)
