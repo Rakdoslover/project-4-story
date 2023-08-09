@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.views.generic.edit import DeleteView, UpdateView
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 from django.contrib.auth.mixins import (
     LoginRequiredMixin
@@ -61,6 +62,7 @@ class ChapterDetail(View):
             comment.post = chapter
             comment.user = User.objects.get(id=request.user.id)
             comment.save()
+            messages.success(request, f'Review made!')
 
         else:
             comment_form = CommentForm()
