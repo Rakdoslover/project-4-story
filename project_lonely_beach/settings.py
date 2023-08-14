@@ -27,12 +27,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEBUG' in os.environ
 
 X_FRAME_ORIGINS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
-    'the-lonely-beach-project-aff864383002.herokuapp.com',
+    '8000-rakdoslover-project4sto-7g441ih23a3.ws-eu103.gitpod.io',
     '8000-rakdoslover-project-4-st-k9zlraodgz.us2.codeanyapp.com',
 ]
 
