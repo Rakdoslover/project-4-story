@@ -12,6 +12,11 @@ from django.contrib.auth.mixins import (
     LoginRequiredMixin
 )
 
+# Messages
+
+
+# messages.add_message(request, messages.SUCCESS, "Comment deleted!")
+# messages.add_message(request, messages.ERROR, "Something went wrong!")
 
 # View for home page, with chapters
 class ChapterList(generic.ListView):
@@ -62,7 +67,7 @@ class ChapterDetail(View):
             comment.post = chapter
             comment.user = User.objects.get(id=request.user.id)
             comment.save()
-            messages.success(request, f'Review made!')
+            messages.add_message(request, messages.SUCCESS, "Comment created!")
 
         else:
             comment_form = CommentForm()
@@ -101,9 +106,11 @@ class UpdateComment(LoginRequiredMixin, UpdateView):
         "proposed_title",
         "featured_image"
     ]
+    
 
     def get_success_url(self):
         post = self.object.post
         return reverse_lazy('chapter_detail', kwargs={'slug': post.slug})
+        # messages.add_message(request, messages.SUCCESS, "Comment updated!")
 
     template_name = 'update_comment.html'
