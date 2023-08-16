@@ -9,7 +9,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #62a5ec;
 }
 
 .red-o {
@@ -25,7 +25,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #62a5ec;
 }
 
 .main-bg {
@@ -50,7 +50,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #199749;
 }
 
 .author {
@@ -72,7 +72,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #62a5ec;
     color: white;
     position: relative;
 }
@@ -89,7 +89,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #62a5ec;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -97,6 +97,25 @@ body {
 }
 
 /* ----- -----*/
+
+/*-----Message styling-----*/
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/*----- -----*/
 
 .post-link {
     text-decoration: none;

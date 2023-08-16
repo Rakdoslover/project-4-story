@@ -54,25 +54,25 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 {%for comment in comments %}
-                <strong>
-                    {{ comment.name }}
+                    <strong>
+                        {{ comment.name }}
+                        <br>
+                        <br>
+                        Proposed chapter title: {{ comment.proposed_title }}
+                    </strong>
+                    <br>
+                    <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
+                        style="max-width: 400px; max-height: 300px">
                     <br>
                     <br>
-                    Proposed chapter title: {{ comment.proposed_title }}
-                </strong>
-                <br>
-                <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
-                    style="max-width: 400px; max-height: 300px">
-                <br>
-                <br>
 
-                {% if user.is_authenticated and user == comment.user %}
-                <div class="text-center">
-                    <a href="{% url 'update' pk=comment.id %}" class="btn btn-signup btn-sm">Edit</a>
-                    <a href="{% url 'delete' pk=comment.id %}" class="btn btn-signup btn-sm">Delete</a>
-                </div>
-                {% endif %}
-                <hr>
+                    {% if user.is_authenticated and user == comment.user %}
+                        <div class="text-center">
+                            <a href="{% url 'update' pk=comment.id %}" class="btn btn-signup btn-sm">Edit</a>
+                            <a href="{% url 'delete' pk=comment.id %}" class="btn btn-signup btn-sm">Delete</a>
+                        </div>
+                    {% endif %}
+                    <hr>
                 {% endfor %}
             </div>
         </div>
