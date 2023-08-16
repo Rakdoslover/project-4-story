@@ -27,13 +27,17 @@
 
 <div class="container">
     <div class="row">
-        {% if messages %}
-            <ul class="messages text-center alert">
-                {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+        <div class="col card mb-4 mt-3 left top">
+            {% if messages %}
+                <div class="card-body messages">
+                    {% for message in messages %}
+                        <p class="card-text text-center">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
         <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- The chapter content goes inside the card-text. -->
