@@ -33,7 +33,7 @@ X_FRAME_ORIGINS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
     '8000-rakdoslover-project4sto-7g441ih23a3.ws-eu104.gitpod.io',
-    'the-lonely-beach-project-aff864383002.herokuapp.com/',
+    'https://the-lonely-beach-project-aff864383002.herokuapp.com',
 ]
 
 
