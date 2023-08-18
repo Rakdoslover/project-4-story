@@ -67,7 +67,7 @@ class ChapterDetail(View):
             comment.post = chapter
             comment.user = User.objects.get(id=request.user.id)
             comment.save()
-            messages.add_message(request, messages.SUCCESS, "Comment created!")
+            messages.add_message(request, messages.SUCCESS, "You've created a comment!")
 
         else:
             comment_form = CommentForm()
@@ -88,12 +88,13 @@ class ChapterDetail(View):
 class DeleteComment(LoginRequiredMixin, DeleteView):
     """ Delete a comment """
     model = Comment
+    template_name = 'delete_comment.html'
 
     def get_success_url(self):
         post = self.object.post
+        messages.add_message(self.request, messages.SUCCESS, "Your comment has been deleted!")
         return reverse_lazy('chapter_detail', kwargs={'slug': post.slug})
 
-    # success_url = 'chapter_detail'
 
     template_name = 'delete_comment.html'
 
@@ -106,11 +107,12 @@ class UpdateComment(LoginRequiredMixin, UpdateView):
         "proposed_title",
         "featured_image"
     ]
-    
+
 
     def get_success_url(self):
         post = self.object.post
+        messages.add_message(self.request, messages.SUCCESS, "Your comment has been updated!")
         return reverse_lazy('chapter_detail', kwargs={'slug': post.slug})
-        # messages.add_message(request, messages.SUCCESS, "Comment updated!")
+        
 
     template_name = 'update_comment.html'
