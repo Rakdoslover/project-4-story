@@ -32,8 +32,8 @@ DEBUG = 'DEBUG' in os.environ
 X_FRAME_ORIGINS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
-    '8000-rakdoslover-project4sto-7g441ih23a3.ws-eu104.gitpod.io',
     'the-lonely-beach-project-aff864383002.herokuapp.com',
+    '8000-rakdoslover-project4sto-7g441ih23a3.ws-eu104.gitpod.io',
 ]
 
 
@@ -89,7 +89,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://8000-rakdoslover-project-4-st-k9zlraodgz.us2.codeanyapp.com',
+    'http://8000-rakdoslover-project4sto-7g441ih23a3.ws-eu104.gitpod.io',
     'https://the-lonely-beach-project-aff864383002.herokuapp.com',
 ]
 
