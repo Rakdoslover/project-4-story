@@ -2,100 +2,100 @@
 {% block content %} {% load crispy_forms_tags %}
 {% load static %}
 <main class="flex-shrink-0 main-bg"></main>
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Chapter title goes below -->
-                <h1 class="post-title">{{ chapter.title }}</h1>
-                <!-- Chapter author goes before the | the chapter's created date goes after -->
-                <p class="post-subtitle">
-                    {{ chapter.author }} | {{ chapter.created_on }}
-                </p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="/media/pictures/starry-sky.jpg" width="100%" alt="chapter image">
-                {% else %}
-                <img src="{{ chapter.featured_image.url }}" width="100%" alt="chapter image">
-                {% endif %}
+    <div class="masthead">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-6 masthead-text">
+                    <!-- Chapter title goes below -->
+                    <h1 class="post-title">{{ chapter.title }}</h1>
+                    <!-- Chapter author goes before the | the chapter's created date goes after -->
+                    <p class="post-subtitle">
+                        {{ chapter.author }} | {{ chapter.created_on }}
+                    </p>
+                </div>
+                <div class="d-none d-md-block col-md-6 masthead-image">
+                    <!-- The featured image URL goes in the src attribute -->
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img src="/media/pictures/starry-sky.jpg" width="100%" alt="chapter image">
+                    {% else %}
+                    <img src="{{ chapter.featured_image.url }}" width="100%" alt="chapter image">
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4 mt-3 left top">
-            <div class="card-body">
-                <!-- The chapter content goes inside the card-text. -->
-                <p class="card-text">{{ chapter.content | safe }}</p>
-                <div class="row">
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
-                        {% endwith %}
+    <div class="container">
+        <div class="row">
+            <div class="col card mb-4 mt-3 left top">
+                <div class="card-body">
+                    <!-- The chapter content goes inside the card-text. -->
+                    <p class="card-text">{{ chapter.content | safe }}</p>
+                    <div class="row">
+                        <div class="col-1">
+                            {% with comments.count as total_comments %}
+                            <strong class="text-secondary"><i class="far fa-comments"></i>
+                                <!-- Our total_comments variable goes before the closing strong tag -->
+                                {{ total_comments }}</strong>
+                            {% endwith %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 card mb-4 mt-3">
-            <!-- Comment section -->
-            <h3>Comments:</h3>
-            <div class="card-body">
-                {%for comment in comments %}
-                    <strong>
-                        {{ comment.name }}
-                        <br>
-                        <br>
-                        Proposed chapter title: {{ comment.proposed_title }}
-                    </strong>
-                    <br>
-                    <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
-                        style="max-width: 400px; max-height: 300px">
-                    <br>
-                    <br>
-
-                    {% if user.is_authenticated and user == comment.user %}
-                        <div class="text-center">
-                            <a href="{% url 'update' pk=comment.id %}" class="btn btn-signup btn-sm">Edit</a>
-                            <a href="{% url 'delete' pk=comment.id %}" class="btn btn-signup btn-sm">Delete</a>
-                        </div>
-                    {% endif %}
-                    <hr>
-                {% endfor %}
+        <div class="row">
+            <div class="col">
+                <hr>
             </div>
         </div>
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
-                <!-- Post-a-comment section -->
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Thanks for your input!
+        <div class="row">
+            <div class="col-md-8 card mb-4 mt-3">
+                <!-- Comment section -->
+                <h3>Comments:</h3>
+                <div class="card-body">
+                    {%for comment in comments %}
+                        <strong>
+                            {{ comment.name }}
+                            <br>
+                            <br>
+                            Proposed chapter title: {{ comment.proposed_title }}
+                        </strong>
+                        <br>
+                        <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
+                            style="max-width: 400px; max-height: 300px">
+                        <br>
+                        <br>
+
+                        {% if user.is_authenticated and user == comment.user %}
+                            <div class="text-center">
+                                <a href="{% url 'update' pk=comment.id %}" class="btn btn-signup btn-sm">Edit</a>
+                                <a href="{% url 'delete' pk=comment.id %}" class="btn btn-signup btn-sm">Delete</a>
+                            </div>
+                        {% endif %}
+                        <hr>
+                    {% endfor %}
                 </div>
-                {% else %} {% if user.is_authenticated %}
+            </div>
+            <div class="col-md-4 card mb-4 mt-3">
+                <div class="card-body">
+                    <!-- Post-a-comment section -->
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Thanks for your input!
+                    </div>
+                    {% else %} {% if user.is_authenticated %}
 
-                <h3>Leave a Review:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="POST" style="margin-top: 1.3em" enctype="multipart/form-data">
-                    {{ comment_form | crispy }} {% csrf_token %}
-                    <br>
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% endif %} {% endif %}
+                    <h3>Leave a Review:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="POST" style="margin-top: 1.3em" enctype="multipart/form-data">
+                        {{ comment_form | crispy }} {% csrf_token %}
+                        <br>
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% endif %} {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 {% endblock content %}
