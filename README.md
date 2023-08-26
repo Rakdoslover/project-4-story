@@ -110,6 +110,22 @@ The plan was to make them all at first and cross them out as the project progres
 but at times I got stuck on problems not forseen, which caused me to cross them off
 a little more haphazardly.
 
+### Deployment to Heroku
+---
+After the repository, Kanban board and workspace was up and running I started to connect it to Heroku.
+Steps to deploy:
+- Created a new app with the name of the-lonely-beach-project.
+- Connected my postgres database, Cloudinary and secret key to the config vars.
+- Put the DISABLE_COLLECTSTATIC to 1 until final depolyment.
+- Assigned the port = 8000.
+- Connected the repo to automatically deploy when commited to main branch.
+- Set the debug to "DEBUG = 'DEVELOPMENT' in os.environ" and added correct code to my env.py to make sure the code when to debug and not.
+- Updated the allowed hosts in settings to show both sites (live and in workspace).
+- Started commiting to the repo and checking the live site with after each major update.
+- At the end when i was happy with the finished product, I made sure to remove DISABLE_COLLECTSTATIC and published the site.
+
+At some points I had to take a step back to redo certain bits and pieces, but I followed these steps to get the final version.
+
 #### User stories
 
 Down below you can find both the fulfilled stories but also those not completed.
@@ -253,18 +269,18 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 ### Account Registration
 | Test | Result |
 |--|--|
-| User can create account |Pass|
-| User can log into account |Pass|
-| User can log out of account |Pass|
+| User can create account | Pass |
+| User can log into account | Pass |
+| User can log out of account | Pass |
 
 ---
 
 ### Chapter and Pagination 
 | Test | Result |
 |--|--|
-| User can open each chapter paginated on the site |Pass|
-| User can go back and forth between sites with Next/Prev-button |Pass|
-| User can see chapters without being logged in |Pass|
+| User can open each chapter paginated on the site | Pass |
+| User can go back and forth between sites with Next/Prev-button | Pass |
+| User can see chapters without being logged in | Pass |
 
 ---
 
@@ -282,6 +298,7 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 |--|--|
 | Authorized users can comment on a specific chapter | Pass |
 | All users can read comments posted by authorized users | Pass |
+| Users gets a message telling them the comment has been created | Pass |
 
 ---
 
@@ -290,6 +307,7 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 |--|--|
 | Authorized users can update a previously published comment they own | Pass |
 | Authorized users can delete a previously published comment they own | Pass |
+| Users gets a message telling them their comment has been updated or deleted | Pass |
 
 ---
 
@@ -297,13 +315,13 @@ Logout Page   | Size to 1920px using Chrome Dev Tools | Elements look good @ 192
 
 | Test | Result  |
 |--|--|
-| Admin can add chapters from adminpanel |Pass|
-| Admin can add comments from adminpanel |Pass|
-| Admin can update chapters from adminpanel |Pass|
-| Admin can update comments from adminpanel |Pass|
-| Admin can delete chapters from adminpanel |Pass|
-| Admin can delete comments from adminpanel |Pass|
-| Admin can create/update/delete user profiles from adminpanel |Pass|
+| Admin can add chapters from adminpanel | Pass |
+| Admin can add comments from adminpanel | Pass |
+| Admin can update chapters from adminpanel | Pass |
+| Admin can update comments from adminpanel | Pass |
+| Admin can delete chapters from adminpanel | Pass |
+| Admin can delete comments from adminpanel | Pass |
+| Admin can create/update/delete user profiles from adminpanel | Pass |
 
 ---
 
