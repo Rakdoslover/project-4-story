@@ -13,9 +13,9 @@
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in chapter.featured_image.url %}
-                                        <img class="card-img-top" src="/media/pictures/starry-sky.jpg" style="width: 100%; height: 100%;" alt="chapter image">
+                                        <img class="card-img-top img-fitting" src="/media/pictures/starry-sky.jpg" style="width: 100%; height: 100%;" alt="chapter image">
                                     {% else %}
-                                        <img class="card-img-top" src="{{ chapter.featured_image.url }}" style="width: 100%; height: 100%;" alt="chapter image">
+                                        <img class="card-img-top img-fitting" src="{{ chapter.featured_image.url }}" style="width: 100%; height: 100%;" alt="chapter image">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ chapter.author }}</p>

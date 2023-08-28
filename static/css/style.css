@@ -35,6 +35,7 @@ body {
 .card {
     border: none;
     background-color: transparent;
+    align-items: center;
 }
 
 /* ----- Images on home page ----- */
@@ -58,6 +59,7 @@ body {
     margin: 4px;
     text-transform: uppercase;
 }
+
 
 /* ----- ----- */
 
@@ -113,12 +115,22 @@ body {
     font-weight: bold;
 }
 
+.message-box {
+    position: relative;
+    max-width: fit-content;
+    width: 100%;
+    height: 100%;
+}
+
 /*----- -----*/
 
 /*-----Comment styling-----*/
 
-#comment-body {
-    
+.image-body {
+    position: relative;
+    max-width: fit-content;
+    width: 100%;
+    height: 100%;
 }
 
 /*----- -----*/
@@ -186,10 +198,16 @@ body {
     .container {
         width: 90%;
     }
+    .message-box {
+        width: auto;
+    }
 
 
 /*---------- 992px tablets ----------*/
 @media (min_width: 992px)
     .container {
         width: 75%;
+    }
+    .message-box {
+        width: auto;
     }

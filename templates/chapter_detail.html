@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8 mb-4 mt-3" id="comment-body">
+            <div class="col-md-8 mb-4 mt-3"comment-body>
                 <!-- Comment section -->
                 <h3>Comments:</h3>
                 <div class="card-body">
@@ -61,13 +61,13 @@
                             Proposed chapter title: {{ comment.proposed_title }}
                         </strong>
                         <br>
-                        {% if display <= 456px %}
+                        <img class="image-body" src="{{ comment.featured_image.url }}" alt="Uploaded image">
+                        <!-- {% if display <= 456px %}
                             <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
                                 style="max-width: 300px; max-height: 250px">
                         {% else %}
-                            <img src="{{ comment.featured_image.url }}" alt="Uploaded image"
-                                style="max-width: 400px; max-height: 300px">
-                        {% endif %}
+                            
+                        {% endif %} -->
                         <br>
                         <br>
 
