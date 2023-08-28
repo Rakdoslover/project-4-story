@@ -115,6 +115,14 @@ body {
 
 /*----- -----*/
 
+/*-----Comment styling-----*/
+
+#comment-body {
+    
+}
+
+/*----- -----*/
+
 .post-link {
     text-decoration: none;
     color: #445261;
@@ -185,4 +193,3 @@ body {
     .container {
         width: 75%;
     }
-

@@ -63,7 +63,7 @@
     <main class="flex-shrink-0 main-bg">
         <div class="container">
             <div class="row">
-                <div class="col-4 offset-4 card mb-4 mt-3 left top">
+                <div class="{% if display >= 720px %} col-4 offset-3 card mb-4 mt-3 left top {% else %} col card mb-4 mt-3 left top {% endif %}">
                     {% if messages %}
                         <div class="card-body messages">
                             {% for message in messages %}
