@@ -367,6 +367,7 @@ Main page of my site, this is where we draw our users attention.
 Here we can see the navbar with it's few but simple options(home, login & register),
 the latest chapters sorted by newest to oldest and at the bottom a small footer.
 ![Home Page](/media/pictures/home-page.jpg)
+
 ##### Responsiveness Home Page
 ---
 And here we have it opened and scaled down to 320px width.
