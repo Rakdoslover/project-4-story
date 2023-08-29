@@ -110,6 +110,16 @@ The plan was to make them all at first and cross them out as the project progres
 but at times I got stuck on problems not forseen, which caused me to cross them off
 a little more haphazardly.
 
+### Deployment locally
+---
+To start up the project from scratch I took the following steps:
+- Created a repository from the CI gitpod full template.
+- Installed django and other apps that would be included in the project.
+- Created an env.py file and continously updated it with the variables needed for this project.
+- Updated my settings.py installed apps, allowed hosts and changed the debug value.
+- Made changes to the main urls.py to integrate admin, accounts and home pages.
+- Tried the local host on port 8000 to see if it was up and running.
+
 ### Deployment to Heroku
 ---
 After the repository, Kanban board and workspace was up and running I started to connect it to Heroku.
@@ -121,6 +131,7 @@ Steps to deploy:
 - Connected the repo to automatically deploy when commited to main branch.
 - Set the debug to "DEBUG = 'DEVELOPMENT' in os.environ" and added correct code to my env.py to make sure the code when to debug and not.
 - Updated the allowed hosts in settings to show both sites (live and in workspace).
+- Wrote a Procfile and requirements.txt.
 - Started commiting to the repo and checking the live site with after each major update.
 - At the end when i was happy with the finished product, I made sure to remove DISABLE_COLLECTSTATIC and published the site.
 
