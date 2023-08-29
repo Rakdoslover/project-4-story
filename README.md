@@ -372,6 +372,7 @@ the latest chapters sorted by newest to oldest and at the bottom a small footer.
 ---
 And here we have it opened and scaled down to 320px width.
 The navbar is opened to show how it looks downscaled.
+
 ![Home Page 320px](/media/pictures/home-page-320.jpg)
 
 #### Register Page
@@ -384,6 +385,7 @@ username and a password to get access to the comment section.
 ##### Responsiveness Register Page
 ---
 And here we have it opened and scaled down to 320px width.
+
 ![Register Page 320px](/media/pictures/register-page-320.jpg)
 
 #### Login page
