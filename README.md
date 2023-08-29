@@ -397,6 +397,7 @@ A simple page that takes the user back to the home page after signing in.
 #####  Responsiveness Login Page
 ---
 And here we have it opened and scaled down to 320px width.
+
 ![Login Page 320px](/media/pictures/login-page-320.jpg)
 
 #### Logout Page
@@ -408,6 +409,7 @@ A simple page that takes the user back to the home page after signing out.
 #####  Responsiveness Logout Page
 ---
 And here we have it opened and scaled down to 320px width.
+
 ![Logout Page 320px](/media/pictures/logout-page-320.jpg)
 
 #### Chapter Page (upper)
@@ -428,6 +430,7 @@ While logged in you can Create, Read, Update and Delete your own comments.
 ##### Responsiveness Chapter Page
 ---
 And here we have it opened and scaled down to 320px width.
+
 ![Chapter Page 320px](/media/pictures/chapter-320.jpg)
 
 #### Update Page
@@ -440,6 +443,7 @@ This fulfills the U in CRUD.
 ##### Responsiveness Update Page
 ---
 And here we have it opened and scaled down to 320px width.
+
 ![Update Page 320px](/media/pictures/update-page-320.jpg)
 
 #### Delete Page
@@ -452,6 +456,7 @@ This fulfills the D in CRUD.
 ##### Responsiveness Delete Page
 ---
 And here we have it opened and scaled down to 320px width.
+
 ![Delete Page 320px](/media/pictures/delete-page-320.jpg)
 
 [Back to Top of page](#tcontents)
